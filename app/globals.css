@@ -1,0 +1,532 @@
+@import "tailwindcss";
+
+:root {
+  --white: rgb(255, 255, 255);
+  --neutral-color: rgb(249, 248, 255);
+  --primary-color: rgb(70, 58, 176);
+  --accent-color: rgb(255, 122, 65);
+  --accent-color-hover: rgb(255, 158, 117);
+  --primary-color-hover: rgb(98, 55, 229);
+  --black-color: rgb(13, 8, 53);
+  --yellow-color: rgb(255, 225, 73);
+  --pink-color: rgb(242, 90, 191);
+  --red-color: rgb(222, 33, 68);
+  --green-color: rgb(84, 211, 52);
+  --blue-color: rgb(73, 88, 227);
+  --border-radius: 16px;
+  --hero-height: max(calc(614vw * 100 / 1920), calc(614vh * 100 / 1080));
+  --hero-py: max(calc(150vw * 100 / 1920), calc(150vh * 100 / 1080));
+}
+
+body {
+  scroll-behavior: smooth;
+  background-color: var(--neutral-color);
+}
+
+.round-border {
+  border-radius: var(--border-radius);
+}
+
+.accent-background {
+  background-color: var(--accent-color);
+}
+
+.primary-background {
+  background-color: var(--primary-color);
+}
+
+.primary-hover-background {
+  background-color: var(--primary-color-hover);
+}
+
+.neutral-background {
+  background-color: var(--neutral-color) !important;
+}
+
+.white-background {
+  background-color: var(--white);
+}
+
+.black-background {
+  background-color: var(--black-color);
+}
+
+.black-color {
+  color: var(--black-color);
+}
+
+.accent-color {
+  color: var(--accent-color);
+}
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.neutral-color {
+  color: var(--neutral-color);
+}
+
+.white-color {
+  color: var(--white);
+}
+
+.green-color {
+  color: var(--green-color);
+}
+
+p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+h2 {
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+}
+
+h3 {
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.nav-text {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+.account-btn {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: var(--white-background);
+  transition: background-color 150ms ease-in-out;
+}
+
+.account-btn:hover {
+  background-color: var(--neutral-color);
+}
+
+.btn-xl-text {
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.btn-l-text {
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.btn-m-text {
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-s-text {
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-round {
+  border-radius: 8px;
+}
+
+.search-bar-icon {
+  background: url("/search-icon.png") no-repeat;
+  background-size: 16px;
+  outline: none;
+  padding: 8px 16px;
+}
+
+.search-bar-text {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-bold {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.small-p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+.small-p-bold {
+  font-weight: 600;
+}
+
+.card-denumire-produs {
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card-pret {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card-pret-vechi {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10px;
+}
+
+.card-link {
+  font-size: 12px;
+}
+
+.footer-category-label {
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.filtre-header {
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.pagina-produs-pret-vechi {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+.pagina-produs-pret {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.pagina-produs-subheading {
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.checkout-pret {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.checkout-pret-vechi {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10px;
+}
+
+.checkout-cod-produs {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+}
+
+.checkout-pret-final {
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.checkout-pret {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+.checkout-labele-comanda {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.checkout-schimba-culoare-btn-text {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10px;
+}
+
+.checkout-product-shadow {
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+}
+
+.checkout-btn-background {
+  background-color: var(--primary-color);
+  transition: background-color 150ms ease-in-out;
+}
+
+.checkout-btn-background:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.checkout-btn-design-border-radius {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+#search-bar::placeholder {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 50%;
+  color: var(--primary-color);
+}
+
+button {
+  cursor: pointer;
+  border-style: none;
+}
+
+.product-nav-background {
+  background-color: var(--neutral-color);
+  transition: background-color 150ms ease-in-out;
+}
+
+.product-nav-background:hover {
+  background-color: var(--white);
+}
+
+.product-nav-page-active {
+  color: var(--accent-color);
+}
+
+#hero-section {
+  background-image: url("/hero-section-img.png");
+  width: 100%;
+  height: 615px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#hero-btn {
+  background-color: var(--accent-color);
+  transition: background-color 150ms ease-in-out;
+}
+
+#hero-btn:hover {
+  background-color: var(--accent-color-hover);
+}
+
+.box-shadow {
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+}
+
+.stea {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: gray;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.stea.transparent {
+  background: none;
+}
+
+.stea.left {
+  clip-path: polygon(
+    50% 0%, 53% 35%, 50% 35%, 
+    50% 57%, 50% 91%, 50% 70%, 
+    21% 91%, 32% 57%, 2% 35%, 39% 35%
+  );
+  background: var(--primary-color);
+  position: absolute;
+}
+
+.stea.full {
+  background: var(--primary-color);
+  overflow: hidden;
+}
+
+.cta-btn {
+  background-color: var(--primary-color);
+  transition: background-color 150ms ease-in-out;
+}
+
+.cta-btn:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.category-radio {
+  color: var(--primary-color);
+  background: var(--white);
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.filtru-input {
+  border-style: none;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filtru-input-checked {
+  background: var(--primary-color);
+  background-image: url("/checkmark-alb.png");
+  background-position: center;
+  background-size: 8px;
+  background-repeat: no-repeat;
+}
+
+.checkmark-recomandari {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+#footer-cta-btn {
+  background-color: var(--accent-color);
+  transition: background-color 150ms ease-in-out;
+}
+
+#footer-cta-btn:hover {
+  background-color: var(--accent-color-hover);
+}
+
+.visible-input-text-border {
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+}
+
+.filtre-submit-button-background {
+  background-color: var(--primary-color);
+  transition: background-color 150ms ease-in-out;
+}
+
+.filtre-submit-button-background:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.sterge-filtre-text {
+  font-size: 12px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.color-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.NEGRU {
+  background-color: var(--black-color);
+}
+
+.ROZ {
+  background-color: var(--pink-color);
+}
+
+.ROSU {
+  background-color: var(--red-color);
+}
+
+.VERDE {
+  background-color: var(--green-color);
+}
+
+.ALBASTRU {
+  background-color: var(--blue-color);
+}
+
+.GALBEN {
+  background-color: var(--yellow-color);
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.white-circle-border {
+  border: 2px solid var(--primary-color);
+}
+
+.pagina-produs-color-circle-checked {
+  border: 2px solid var(--primary-color);
+  box-shadow: 0px 0px 2px 2px var(--accent-color);
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+  border: 2px solid var(--primary-color);
+  border-radius: 16px;
+  background-color: var(--white);
+  color: var(--black-color);
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  padding: 16px 24px;
+  width: 100%;
+}
+
+input[type="text"].cod-reducere {
+  border: 2px solid rgb(70, 58, 176, 0.25);
+  border-radius: 100px;
+}
+
+input[type="text"]:focus , input[type="email"]:focus , input[type="password"]:focus , input[type="tel"]:focus {
+  outline: none;
+  border: 2px solid var(--accent-color);
+}
+
+
+input[type="text"]::placeholder{
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+.livrare-checkbox {
+  outline: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+}
+
+.livrare-checkbox:checked {
+  background: url("/checkmark-alb.png");
+  background-color: var(--primary-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 10px;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+}
+
+input[type="radio"]:checked {
+  background-image: url("/checkmark-alb.png");
+  background-color: var(--primary-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 10px;
+}
+
+.pay-capsule {
+  width: 40px;
+  height: 20px;
+  border: 1px solid rgba(0,0,0,0.5);
+}

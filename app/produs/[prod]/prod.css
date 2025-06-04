@@ -1,0 +1,63 @@
+.stea-pagina-produs {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: gray;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.stea-pagina-produs.left {
+    clip-path: polygon(
+        50% 0%, 53% 35%, 50% 35%, 
+        50% 5%, 50% 91%, 50% 70%, 
+        21% 91%, 32% 57%, 2% 35%, 39% 35%
+    );
+    background: var(--primary-color);
+    position: absolute;
+}
+
+.stea-pagina-produs.full {
+    background: var(--primary-color);
+    overflow: hidden;
+}
+
+.buton {
+    width: fit-content;
+}
+
+.buton-nr-produse {
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+}
+
+.buton-nr-produse-butoane {
+    font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: background-color 150ms ease-in-out;
+}
+
+.buton-nr-produse-butoane:hover {
+    background-color: #fff2e3;
+}
+
+.livrare-text {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+.adauga-in-cos-buton {
+    background-color: var(--primary-color);
+    transition: background-color 150ms ease-in-out;
+}
+
+.adauga-in-cos-buton:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.pagina-produs-text-box {
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
