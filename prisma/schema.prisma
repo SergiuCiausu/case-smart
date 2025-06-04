@@ -1,0 +1,144 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Produs {
+  id                  Int                   @id @default(autoincrement())
+  cod_produs          Int                   @unique
+  grup_produs         Int                   @default(123)
+  rating              Float                 @default(0)
+  totalRecenzii       Int
+  pret                Int
+  reducere            Int?
+  descriere_produs    String                @db.Text
+  descriere           String                @db.Text
+  specificatii        String                @db.Text
+  img                 String                @db.Text
+  denumire_produs     String                @db.Text
+  brand               Brand                 @default(LIVOLO)
+  culoare             Culori                @default(ROSU)
+  url                 String                @default("")
+  recenzie            Recenzie[]
+  intrerupatoareTouch IntrerupatoareTouch[]
+  prizeRamaSticla     PrizeRamaSticla[]
+  intrerupatorPriza   IntrerupatorPriza[]
+  prizaMedia          PrizaMedia[]
+  telecomanda         Telecomanda[]
+  smartHome           SmartHome[]
+}
+
+model Recenzie {
+  id         Int    @id @default(autoincrement())
+  produsId   Int
+  nume       String @db.Text
+  email      String @db.Text
+  rating     Int
+  comentariu String @db.Text
+
+  produs Produs @relation(fields: [produsId], references: [id])
+}
+
+enum Brand {
+  LIVOLO
+  LUXION
+  OWON
+  SONOFF
+  TELLUR
+}
+
+enum Culori {
+  ROSU
+  ALB
+  NEGRU
+  GALBEN
+  ROZ
+  VERDE
+  ALBASTRU
+}
+
+model IntrerupatoareTouch {
+  id        Int    @id @default(autoincrement())
+  codProdus Int
+  produs    Produs @relation(fields: [codProdus], references: [cod_produs])
+}
+
+model PrizeRamaSticla {
+  id        Int    @id @default(autoincrement())
+  codProdus Int
+  produs    Produs @relation(fields: [codProdus], references: [cod_produs])
+}
+
+model IntrerupatorPriza {
+  id        Int    @id @default(autoincrement())
+  codProdus Int
+  produs    Produs @relation(fields: [codProdus], references: [cod_produs])
+}
+
+model PrizaMedia {
+  id        Int    @id @default(autoincrement())
+  codProdus Int
+  produs    Produs @relation(fields: [codProdus], references: [cod_produs])
+}
+
+model Telecomanda {
+  id        Int    @id @default(autoincrement())
+  codProdus Int
+  produs    Produs @relation(fields: [codProdus], references: [cod_produs])
+}
+
+model SmartHome {
+  id        Int    @id @default(autoincrement())
+  codProdus Int
+  produs    Produs @relation(fields: [codProdus], references: [cod_produs])
+}
+
+model Categorii {
+  id   Int    @id @default(autoincrement())
+  nume String
+}
+
+model ImaginiProdus {
+  id Int @id @default(autoincrement())
+  grup_produs Int @default(123)
+  img1ROSU String @default("/intrerupator-simplu-livolo-cu-touch-ROSU.png")
+  img2ROSU String @default("/intrerupator-simplu-livolo-cu-touch-ROSU.png")
+  img3ROSU String @default("/intrerupator-simplu-livolo-cu-touch-ROSU.png")
+  img4ROSU String @default("/intrerupator-simplu-livolo-cu-touch-ROSU.png")
+  img5ROSU String @default("/intrerupator-simplu-livolo-cu-touch-ROSU.png")
+  img1NEGRU String @default("/intrerupator-simplu-livolo-cu-touch-NEGRU.png")
+  img2NEGRU String @default("/intrerupator-simplu-livolo-cu-touch-NEGRU.png")
+  img3NEGRU String @default("/intrerupator-simplu-livolo-cu-touch-NEGRU.png")
+  img4NEGRU String @default("/intrerupator-simplu-livolo-cu-touch-NEGRU.png")
+  img5NEGRU String @default("/intrerupator-simplu-livolo-cu-touch-NEGRU.png")
+  img1GALBEN String @default("/intrerupator-simplu-livolo-cu-touch-GALBEN.png")
+  img2GALBEN String @default("/intrerupator-simplu-livolo-cu-touch-GALBEN.png")
+  img3GALBEN String @default("/intrerupator-simplu-livolo-cu-touch-GALBEN.png")
+  img4GALBEN String @default("/intrerupator-simplu-livolo-cu-touch-GALBEN.png")
+  img5GALBEN String @default("/intrerupator-simplu-livolo-cu-touch-GALBEN.png")
+  img1VERDE String @default("/intrerupator-simplu-livolo-cu-touch-VERDE.png")
+  img2VERDE String @default("/intrerupator-simplu-livolo-cu-touch-VERDE.png")
+  img3VERDE String @default("/intrerupator-simplu-livolo-cu-touch-VERDE.png")
+  img4VERDE String @default("/intrerupator-simplu-livolo-cu-touch-VERDE.png")
+  img5VERDE String @default("/intrerupator-simplu-livolo-cu-touch-VERDE.png")
+  img1ROZ String @default("/intrerupator-simplu-livolo-cu-touch-ROZ.png")
+  img2ROZ String @default("/intrerupator-simplu-livolo-cu-touch-ROZ.png")
+  img3ROZ String @default("/intrerupator-simplu-livolo-cu-touch-ROZ.png")
+  img4ROZ String @default("/intrerupator-simplu-livolo-cu-touch-ROZ.png")
+  img5ROZ String @default("/intrerupator-simplu-livolo-cu-touch-ROZ.png")
+  img1ALBASTRU String @default("")
+  img2ALBASTRU String @default("")
+  img3ALBASTRU String @default("")
+  img4ALBASTRU String @default("")
+  img5ALBASTRU String @default("")
+}
